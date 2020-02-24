@@ -8,8 +8,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <meta name="theme-color" content="#563d7c">
-    <link href="main.css" rel="stylesheet">
+    <meta name="theme-color" content="#007bff">
+    <link href="/css/main.css" rel="stylesheet">
 </head>
 <body class="d-flex flex-column h-100">
 <header>
@@ -27,10 +27,17 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="r">Расписание</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="r">Тесты</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="r">Что-то ещё</a>
                 </li>
             </ul>
+            <div>
+                <a href="/login" class="btn btn-outline-light my-2 my-sm-0">Войти</a>
+            </div>
         </div>
     </nav>
 </header>

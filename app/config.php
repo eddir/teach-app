@@ -1,6 +1,7 @@
 <?php
 
 define('ROOT_APP', __DIR__);
+define('ROOT_PATH', realpath(ROOT_APP . '/../'));
 
 define('DB_HOST', '127.0.0.1');
 define('DB_NAME', 'rasp');
