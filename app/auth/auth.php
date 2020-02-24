@@ -37,7 +37,17 @@ function auth_social($source, $email, $access_token, $first_name, $last_name) {
 }
 
 function auth_phrase($passphrase) {
+    global $pdo;
 
+    $stmt = $pdo->prepare('SELECT id FROM users WHERE passphrase = ?');
+    $stmt->execute([$passphrase]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user) {
+        auth($user['id']);
+    } else {
+        header('Location: /login/?failed');
+    }
 }
 
 function auth($user_id) {
