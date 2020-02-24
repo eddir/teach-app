@@ -8,7 +8,7 @@
                     <form class="form-signin">
                         <h1 class="h3 mb-3 font-weight-normal">Вход</h1>
                         <a class="btn btn-lg btn-light btn-block" href="{{ $google_login_url }}">Google</a>
-                        <a class="btn btn-lg btn-light btn-block" href="vkontakte">ВКонтакте</a>
+                        <a class="btn btn-lg btn-light btn-block" href="{{ $vkontakte_login_url }}">ВКонтакте</a>
                         <hr>
                         <label for="passphrase" class="sr-only">Вход по токену</label>
                         <input type="password" id="passphrase" class="form-control " placeholder="Токен" required=""

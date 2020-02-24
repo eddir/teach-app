@@ -98,6 +98,8 @@ function getParent($type, &$parents, $child) {
     }
 }
 
-function dd($data) {
-    echo '<br>', highlight_string("<?php\n\$data =\n" . var_export($data, true) . ";\n?>"), '<br>';
+function dd(...$vars) {
+    foreach ($vars as $var) {
+        echo '<br>', highlight_string("<?php\n\$data =\n" . var_export($var, true) . ";\n?>"), '<br>';
+    }
 }
