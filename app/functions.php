@@ -97,3 +97,7 @@ function getParent($type, &$parents, $child) {
         return $parents[$find]['id'];
     }
 }
+
+function dd($data) {
+    echo '<br>', highlight_string("<?php\n\$data =\n" . var_export($data, true) . ";\n?>"), '<br>';
+}
