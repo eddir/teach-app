@@ -33,24 +33,29 @@ function auth_social($source, $email, $access_token, $first_name, $last_name) {
         execute([$pdo->lastInsertId(), $source, $access_token]);
     }
 
-    auth($user['id']);
+    auth($user['id'], $user['authority']);
 }
 
 function auth_phrase($passphrase) {
     global $pdo;
 
-    $stmt = $pdo->prepare('SELECT id FROM users WHERE passphrase = ?');
+    $stmt = $pdo->prepare('SELECT id, authority FROM users WHERE passphrase = ?');
     $stmt->execute([$passphrase]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user) {
-        auth($user['id']);
+        auth($user['id'], $user['authority']);
     } else {
         header('Location: /login/?failed');
     }
 }
 
-function auth($user_id) {
+function auth($user_id, $authority) {
     $_SESSION['user_id'] = $user_id;
+    $_SESSION['authority'] = $authority;
     header('Location: /?fromLogin');
+}
+
+function getGroup() {
+    return isset($_POST['authority']) ? $_POST['authority'] : 'guest';
 }
