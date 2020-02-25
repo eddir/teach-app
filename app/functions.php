@@ -100,6 +100,6 @@ function getParent($type, &$parents, $child) {
 
 function dd(...$vars) {
     foreach ($vars as $var) {
-        echo '<br>', highlight_string("<?php\n\$data =\n" . var_export($var, true) . ";\n?>"), '<br>';
+        echo '<br><br><br>', highlight_string("<?php\n\$data =\n" . var_export($var, true) . ";\n?>"), '<br>';
     }
 }

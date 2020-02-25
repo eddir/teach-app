@@ -10,6 +10,8 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <meta name="theme-color" content="#007bff">
     <link href="/css/main.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
 </head>
 <body class="d-flex flex-column h-100">
 <header>
@@ -29,7 +31,7 @@
                     <a class="nav-link" href="r">Расписание</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="r">Тесты</a>
+                    <a class="nav-link" href="/tests">Тесты</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="r">Что-то ещё</a>
@@ -54,9 +56,6 @@
         <img id="bxid_862078" src="http://www.digitalwind.ru/images/ru_logo_20png.png" title="www.digitalwind.ru" border="0" align="left" alt="www.digitalwind.ru" width="143" height="56" />
     </div>
 </footer>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-<script src="/js/bootstrap.bundle.min.js"></script>
+@yield('scripts')
 </body>
 </html>
