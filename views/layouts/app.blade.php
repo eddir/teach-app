@@ -45,7 +45,7 @@
         </div>
     </nav>
 </header>
-
+<canvas id="background" style="background-color: #000249;position: absolute;"></canvas>
 <!-- Begin page content -->
 <main role="main" class="flex-shrink-0">
     <div class="container" id="content">
@@ -57,8 +57,10 @@
     <div class="container">
         <img id="bxid_862078" src="http://www.digitalwind.ru/images/ru_logo_20png.png" title="www.digitalwind.ru"
              border="0" align="left" alt="www.digitalwind.ru" width="143" height="56"/>
+        <a class="float-right" href="https://github.com/eddir/teach-app">Github</a>
     </div>
 </footer>
 @yield('scripts')
+<script src="/js/anim.js"></script>
 </body>
 </html>
