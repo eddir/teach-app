@@ -15,13 +15,13 @@
     <div class="form-check" style="display: inline-block">
         <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" name="options[1]">
     </div>
-    <input type="text" name="answers[1]" id="answers[1]" class="form-control" placeholder="Текст ответа" value="2" style="display: inline-block; width: 80%;">
+    <input type="text" name="answers[1]" id="answers[1]" class="form-control" placeholder="Текст ответа" style="display: inline-block; width: 80%;">
 </div>
 <div class="form-group">
     <div class="form-check" style="display: inline-block">
         <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" name="options[2]">
     </div>
-    <input type="text" name="answers[2]" id="answers[2]" class="form-control" placeholder="Текст ответа" value="2" style="display: inline-block; width: 80%;">
+    <input type="text" name="answers[2]" id="answers[2]" class="form-control" placeholder="Текст ответа" style="display: inline-block; width: 80%;">
 </div>
 <div class="form-group">
     <div class="form-check" style="display: inline-block">

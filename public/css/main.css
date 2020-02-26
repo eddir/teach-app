@@ -3,7 +3,11 @@ main > .container {
 }
 
 .footer {
-    background-color: #f5f5f5;
+    background-color: #000249;
+}
+
+body {
+    background: #000249 !important;
 }
 
 .footer > .container {

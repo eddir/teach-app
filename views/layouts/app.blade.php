@@ -55,8 +55,9 @@
 
 <footer class="footer mt-auto py-3">
     <div class="container">
-        <img id="bxid_862078" src="http://www.digitalwind.ru/images/ru_logo_20png.png" title="www.digitalwind.ru"
-             border="0" align="left" alt="www.digitalwind.ru" width="143" height="56"/>
+        <a href="http://digitalwind.ru">
+            <img id="bxid_862078" src="http://www.digitalwind.ru/images/ru_logo_20png.png" title="www.digitalwind.ru"
+                 border="0" align="left" alt="www.digitalwind.ru" width="143" height="56"/></a>
         <a class="float-right" href="https://github.com/eddir/teach-app">Github</a>
     </div>
 </footer>

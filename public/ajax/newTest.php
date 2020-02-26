@@ -8,7 +8,7 @@ if (!isset($_POST['title']) or strlen($_POST['title']) < 3) {
     exit(json_encode(array('error' => true, 'msg' => 'Заголовок должен содержать хотя-бы 3 буквы')));
 }
 
-if (!isset($_POST['per_time']) or $_POST['title'] < 1 or $_POST['per_time'] > 50) {
+if (!isset($_POST['per_time']) or $_POST['per_time'] < 1 or $_POST['per_time'] > 50) {
     exit(json_encode(array('error' => true, 'msg' => 'Число тестов за раз должно быть от 1 до 50')));
 }
 

@@ -17,7 +17,7 @@
             </div>
             <div class="card mt-3 mb-5">
                 <div class="card-body">
-                    <h1>Недавние</h1>
+                    <h1>Недавние</h1><hr>
                     @foreach($tests as $test)
                         <div>
                             <h2>{{ $test->title }}</h2>
