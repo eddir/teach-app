@@ -8,15 +8,21 @@ if (!isset($_GET['test_id'])) {
 
 $test = trim($_GET['test_id']);
 
+$stmt = $pdo->prepare('SELECT per_time FROM tests WHERE id = ?');
+$stmt->execute([$test]);
+$per_time = $stmt->fetch()[0];
+
 $stmt = $pdo->prepare("SELECT id FROM questions WHERE test = ?");
 $stmt->execute([$test]);
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$q = $rows;
 $rands = '';
 
-for ($i = 0; $i < 10; $i++) {
-    $id = array_rand($rows);
-    $rands .= $rows[$id]['id'] . ',';
-    unset($rows[$id]);
+for ($i = 0; $i < $per_time; $i++) {
+    if (empty($q)) $q = $rows;
+    $id = array_rand($q);
+    $rands .= $q[$id]['id'] . ',';
+    unset($q[$id]);
 }
 $stmt = $pdo->prepare("SELECT id, body, description, file FROM questions WHERE id IN (".substr($rands, 0, -1).")");
 $stmt->execute();

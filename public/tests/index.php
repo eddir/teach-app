@@ -2,7 +2,7 @@
 
 include_once '../../app/init.php';
 
-$stmt = $pdo->prepare('SELECT * FROM tests LIMIT 20');
+$stmt = $pdo->prepare('SELECT * FROM tests');
 $stmt->execute();
 $tests = $stmt->fetchAll(PDO::FETCH_OBJ);
 

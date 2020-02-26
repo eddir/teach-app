@@ -66,20 +66,24 @@ function finish() {
     }
     let mark = right/all*100;
     if (mark >= 90) {
-        $('#title').html("Оценка: 5");
+        $('#title').html("Отличный результат");
     } else if (mark >= 75) {
-        $('#title').html("Оценка: 4");
+        $('#title').html("Хороший результат");
     } else if (mark >= 45) {
-        $('#title').html("Оценка: 3");
+        $('#title').html("Удовлетворительный результат");
     } else {
-        $('#title').html("Оценка: 2");
+        $('#title').html("Плохой результат");
     }
-    $('#result').html(right/all*100 + '% верно');
+    $('#result').html(Math.round(right/all*100) + '% верно');
 }
 function fillQuestion(question) {
     $('#description').hide();
     $('#title').html("Вопрос "+(step+1)+"/"+questions.length);
-    $('#question').html('<a target="_blank" href="/' + question['image'] + '"><img class="test_image" src="/' + question['image'] + '" alt="Вопрос"></a>');
+    $('#question').html("");
+    if (question['image']) {
+        $('#question').html('<a target="_blank" href="/' + question['image'] + '"><img class="test_image" src="/' + question['image'] + '" alt="Вопрос"></a>');
+    }
+    $('#question').append('<p>' + question['body'] + '</p>');
     $('#answers').html("");
     let i = 0;
     for (var answer in question['answers']) {

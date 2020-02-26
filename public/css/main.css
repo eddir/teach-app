@@ -127,3 +127,7 @@ body {
 .card {
     border-radius: 50px;
 }
+
+.form-check {
+    display: inline-block;
+}

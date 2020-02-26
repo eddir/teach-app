@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <form class="form">
                         <h1 id="title">Вопрос ?/?</h1>
-                        <div id="question"><p>Вопрос</p></div>
+                        <div id="question"></div>
                         <div id="answers"></div>
                         <div id="result"></div>
                         <a href="#" id="answer" class="btn btn-primary">Далее</a>
