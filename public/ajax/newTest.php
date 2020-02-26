@@ -2,6 +2,8 @@
 
 require '../../app/init.php';
 
+needPermission(['guest', 'admin'], true);
+
 if (!isset($_POST['title']) or strlen($_POST['title']) < 3) {
     exit(json_encode(array('error' => true, 'msg' => 'Заголовок должен содержать хотя-бы 3 буквы')));
 }
@@ -15,7 +17,7 @@ isset($_POST['description']) ? $description = trim($_POST['description']) : null
 $per_time = (int)$_POST['per_time'];
 
 try {
-    $pdo->prepare('INSERT INTO tests (author, title, description, per_time) VALUES (?, ?, ?, ?)')->execute([1, $title, $description, $per_time]);
+    $pdo->prepare('INSERT INTO tests (author, title, description, per_time) VALUES (?, ?, ?, ?)')->execute([$_SESSION['user_id'], $title, $description, $per_time]);
 
     $_SESSION['tests_last_inserted_id'] = $pdo->lastInsertId();
     exit(json_encode(array('error' => 0, 'msg' => 'Success', 'template' => $blade->run('tests.add-question', ['step' => 1]))));

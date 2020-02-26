@@ -31,4 +31,9 @@
 
 @section('scripts')
     <script src="/js/test.js"></script>
+    <script>
+        $(document).ready(function ($) {
+            start();
+        })
+    </script>
 @endsection

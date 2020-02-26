@@ -1,9 +1,9 @@
-
 let steps = [];
 let questions = [];
 let step = 0;
 let next = true;
-$(function () {
+
+function start() {
     $.ajax({
         url: "/ajax/tests.php?test_id=" + location.search.split('test_id=')[1],
         timeout: 25e3,
@@ -13,13 +13,17 @@ $(function () {
             $('#title').html("Вопрос " + (step + 1) + "/" + questions.length);
         }
     });
-    $("#answer").click(function(){
+}
+
+
+$(function () {
+    $("#answer").click(function () {
         if (next) {
             let i = 0;
             $('#description').hide();
             $('#answers').children('.field').each(function () {
                 if ($(this).find('input').first().is(":checked") != questions[step]['answers'][i]['correct']) {
-                    $('#description').html("Неправильно: "+questions[step]['description']).show();
+                    $('#description').html("Неправильно: " + questions[step]['description']).show();
                     $('html, body').animate({
                         scrollTop: $("#description").offset().top
                     }, 1000);
@@ -46,6 +50,7 @@ $(function () {
         }
     });
 });
+
 function finish() {
     $('#description').hide();
     $('#question').hide();
@@ -64,7 +69,7 @@ function finish() {
             wrong++;
         }
     }
-    let mark = right/all*100;
+    let mark = right / all * 100;
     if (mark >= 90) {
         $('#title').html("Отличный результат");
     } else if (mark >= 75) {
@@ -74,11 +79,21 @@ function finish() {
     } else {
         $('#title').html("Плохой результат");
     }
-    $('#result').html(Math.round(right/all*100) + '% верно');
+    $('#result').html(Math.round(right / all * 100) + '% верно');
+    $.ajax({
+        url: '/ajax/sendStat.php',
+        method: 'POST',
+        data: {
+            test_id: location.search.split('test_id=')[1],
+            right_answers: right,
+            wrong_answers: wrong
+        }
+    });
 }
+
 function fillQuestion(question) {
     $('#description').hide();
-    $('#title').html("Вопрос "+(step+1)+"/"+questions.length);
+    $('#title').html("Вопрос " + (step + 1) + "/" + questions.length);
     $('#question').html("");
     if (question['image']) {
         $('#question').html('<a target="_blank" href="/' + question['image'] + '"><img class="test_image" src="/' + question['image'] + '" alt="Вопрос"></a>');
@@ -97,4 +112,23 @@ function fillQuestion(question) {
         i++;
     }
 
+}
+
+function deleteTest(test_id) {
+    $('#remove').modal();
+    $('#remove').attr('data-test-id', test_id);
+}
+
+function forceDeleteTest() {
+    let test_id = $('#remove').attr('data-test-id');
+    $.ajax({
+        url: '/ajax/removeTest.php',
+        method: 'POST',
+        data: {
+            'test_id': test_id
+        },
+        success: function (data) {
+            $('#content').html(data);
+        }
+    });
 }

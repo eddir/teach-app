@@ -56,6 +56,22 @@ function auth($user_id, $authority) {
     header('Location: /?fromLogin');
 }
 
+function checkPermission($authorities) {
+    isset($_SESSION['authority']) ? $group = $_SESSION['authority'] : $group = 'anonymous';
+    return in_array($group, $authorities);
+}
+
+function needPermission($authorities, $ajax = false) {
+    if (!checkPermission($authorities)) {
+        if ($ajax) {
+            exit('401: доступ запрещён');
+        } else {
+            header('Location: /login');
+        }
+    }
+    return true;
+}
+
 function getGroup() {
     return isset($_POST['authority']) ? $_POST['authority'] : 'guest';
 }
