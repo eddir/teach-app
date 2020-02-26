@@ -28,13 +28,13 @@
                     <a class="nav-link" href="/">Главная <span class="sr-only">(текущая)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="r">Расписание</a>
+                    <a class="nav-link" href="/tests">Все задания</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/tests">Тесты</a>
+                    <a class="nav-link" href="/my">Мои задания</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="r">Что-то ещё</a>
+                    <a class="nav-link" href="/stat">Моя статистика</a>
                 </li>
             </ul>
             <div>
