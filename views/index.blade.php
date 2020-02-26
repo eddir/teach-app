@@ -10,8 +10,21 @@
         <div class="col-xl-6 col-lg-8 col-md-9">
             <div class="card mt-5 mb-5">
                 <div class="card-body">
-                    <a class="btn btn-lg btn-primary btn-block" href="/tests/">Доступные тесты</a>
-                    <a class="btn btn-lg btn-success btn-block" href="/tests/add.php">Новый тест</a>
+                    <a class="btn btn-lg btn-primary btn-block" href="/tests/">Доступные задания</a>
+                    <a class="btn btn-lg btn-primary btn-block" href="/stat/">Статистика</a>
+                    <a class="btn btn-lg btn-success btn-block" href="/tests/add.php">Создать задание</a>
+                </div>
+            </div>
+            <div class="card mt-5 mb-5">
+                <div class="card-body">
+                    <h1>Недавние</h1>
+                    @foreach($tests as $test)
+                        <div>
+                            <h2>{{ $test->title }}</h2>
+                            <p>{{ $test->description }}</p>
+                            <a class="btn btn-primary" href="run.php?test_id={{ $test->id }}">Решать</a>
+                        </div><hr>
+                    @endforeach
                 </div>
             </div>
         </div>

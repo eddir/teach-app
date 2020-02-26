@@ -25,21 +25,23 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Главная <span class="sr-only">(текущая)</span></a>
+                    <a class="nav-link" href="/">Главная</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="/tests">Все задания</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="/my">Мои задания</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="/stat">Моя статистика</a>
                 </li>
             </ul>
-            <div>
-                <a href="/login" class="btn btn-outline-light my-2 my-sm-0">Войти</a>
-            </div>
+            @if(!isset($_SESSION['user_id']))
+                <div>
+                    <a href="/login" class="btn btn-outline-light my-2 my-sm-0">Войти</a>
+                </div>
+            @endif
         </div>
     </nav>
 </header>
@@ -53,7 +55,8 @@
 
 <footer class="footer mt-auto py-3">
     <div class="container">
-        <img id="bxid_862078" src="http://www.digitalwind.ru/images/ru_logo_20png.png" title="www.digitalwind.ru" border="0" align="left" alt="www.digitalwind.ru" width="143" height="56" />
+        <img id="bxid_862078" src="http://www.digitalwind.ru/images/ru_logo_20png.png" title="www.digitalwind.ru"
+             border="0" align="left" alt="www.digitalwind.ru" width="143" height="56"/>
     </div>
 </footer>
 @yield('scripts')
