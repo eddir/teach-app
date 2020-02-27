@@ -28,10 +28,16 @@
                     <a class="nav-link" href="/">Главная</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/tests">Все задания</a>
+                    <a class="nav-link" href="/posts">Статьи</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/tests">Задания</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/my">Мои задания</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/my/posts.php">Мои статьи</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/stat">Моя статистика</a>

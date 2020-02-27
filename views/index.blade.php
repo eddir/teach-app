@@ -10,9 +10,9 @@
         <div class="col-xl-6 col-lg-8 col-md-9">
             <div class="card mt-5 mb-3">
                 <div class="card-body">
-                    <a class="btn btn-lg btn-primary btn-block" href="/tests/">Доступные задания</a>
-                    <a class="btn btn-lg btn-primary btn-block" href="/stat/">Статистика</a>
+                    <a class="btn btn-lg btn-primary btn-block" href="/tests/">Доступные материалы</a>
                     <a class="btn btn-lg btn-success btn-block" href="/tests/add.php">Создать задание</a>
+                    <a class="btn btn-lg btn-success btn-block" href="/posts/add.php">Создать запись</a>
                 </div>
             </div>
             <div class="card mt-3 mb-5">

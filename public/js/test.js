@@ -120,12 +120,32 @@ function deleteTest(test_id) {
 }
 
 function forceDeleteTest() {
+    $('#remove').modal('toggle');
     let test_id = $('#remove').attr('data-test-id');
     $.ajax({
         url: '/ajax/removeTest.php',
         method: 'POST',
         data: {
             'test_id': test_id
+        },
+        success: function (data) {
+            $('#content').html(data);
+        }
+    });
+}
+function deletePost(post_id) {
+    $('#remove').modal();
+    $('#remove').attr('data-post-id', post_id);
+}
+
+function forceDeletePost() {
+    $('#remove').modal('toggle');
+    let post_id = $('#remove').attr('data-post-id');
+    $.ajax({
+        url: '/ajax/removePost.php',
+        method: 'POST',
+        data: {
+            'post_id': post_id
         },
         success: function (data) {
             $('#content').html(data);
