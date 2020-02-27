@@ -23,7 +23,13 @@ $(function () {
             $('#description').hide();
             $('#answers').children('.field').each(function () {
                 if ($(this).find('input').first().is(":checked") != questions[step]['answers'][i]['correct']) {
-                    $('#description').html("Неправильно: " + questions[step]['description']).show();
+                    let rights = [];
+                    for (var u = 0; u < questions[step]['answers'].length; u++) {
+                        if (questions[step]['answers'][u]['correct']) {
+                            rights.push(questions[step]['answers'][u]['body']);
+                        }
+                    }
+                    $('#description').html("Неправильно: " + rights.join(', ').substr(-1) + '.' + questions[step]['description']).show();
                     $('html, body').animate({
                         scrollTop: $("#description").offset().top
                     }, 1000);
