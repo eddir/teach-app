@@ -22,14 +22,16 @@ $(function () {
             let i = 0;
             $('#description').hide();
             $('#answers').children('.field').each(function () {
+                console.log(questions[step]['answers']);
                 if ($(this).find('input').first().is(":checked") != questions[step]['answers'][i]['correct']) {
                     let rights = [];
                     for (var u = 0; u < questions[step]['answers'].length; u++) {
-                        if (questions[step]['answers'][u]['correct']) {
+                        if (questions[step]['answers'][u]['correct'] == 1) {
                             rights.push(questions[step]['answers'][u]['body']);
                         }
                     }
-                    $('#description').html("Неправильно: " + rights.join(', ').substr(-1) + '.' + questions[step]['description']).show();
+                    console.log(rights);
+                    $('#description').html("Неправильно: " + rights.join(', ').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '.' + questions[step]['description']).show();
                     $('html, body').animate({
                         scrollTop: $("#description").offset().top
                     }, 1000);
@@ -112,8 +114,8 @@ function fillQuestion(question) {
             '<div class="field"><div class="inputGroup"><input id="option' + i
             + '" name="option' + i
             + '" type="checkbox"/><label for="option' + i
-            + '">' + question['answers'][answer]['body']
-            + '</label></div>'
+            + '"><pre>' + question['answers'][answer]['body'].replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+            + '</pre></label></div>'
         );
         i++;
     }
@@ -139,6 +141,7 @@ function forceDeleteTest() {
         }
     });
 }
+
 function deletePost(post_id) {
     $('#remove').modal();
     $('#remove').attr('data-post-id', post_id);

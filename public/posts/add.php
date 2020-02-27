@@ -9,9 +9,9 @@ $error = "";
 if (isset($_POST['title'])) {
     if (isset($_POST['body'])) {
         if (strlen($_POST['title']) > 2) {
-            if (strlen($_POST['title']) < 1025) {
+            if (strlen($_POST['title']) < 10000) {
                 if (strlen($_POST['body']) > 2) {
-                    if (strlen($_POST['body']) < 1025) {
+                    if (strlen($_POST['body']) < 10000) {
                         $pdo->prepare('INSERT INTO posts (author_id, title, body) VALUES (?, ?, ?)')->execute([
                             $_SESSION['user_id'], trim($_POST['title']), trim($_POST['body'])
                         ]);
@@ -23,7 +23,7 @@ if (isset($_POST['title'])) {
 
                         header('Location: /posts/?fromInsertion=1');
                     } else {
-                        $error = 'Слишком длинное тело';
+                        $error = 'Слишком длинное тело (' . strlen($_POST['body']) . ')';
                     }
                 } else {
                     $error = 'Слишком короткое тело';

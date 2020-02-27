@@ -26,7 +26,7 @@
                         </div>
                         <div class="form-group">
                             <label for="body">Тело</label>
-                            <textarea name="body" id="body" class="form-control" rows="5" required="" minlength="3" maxlength="1024"></textarea>
+                            <textarea name="body" id="body" class="form-control" rows="5" required="" minlength="3" maxlength="10000"></textarea>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Отправить">
                     </form>
