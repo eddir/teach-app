@@ -64,7 +64,20 @@
         <a href="http://digitalwind.ru">
             <img id="bxid_862078" src="http://www.digitalwind.ru/images/ru_logo_20png.png" title="www.digitalwind.ru"
                  border="0" align="left" alt="www.digitalwind.ru" width="143" height="56"/></a>
-        <a class="float-right" href="https://github.com/eddir/teach-app">Github</a>
+        <!--LiveInternet counter-->
+        <script type="text/javascript">
+            document.write('<a class="float-right" href="//www.liveinternet.ru/click" ' +
+                'target="_blank"><img src="//counter.yadro.ru/hit?t12.11;r' +
+                escape(document.referrer) + ((typeof (screen) == 'undefined') ? '' :
+                    ';s' + screen.width + '*' + screen.height + '*' + (screen.colorDepth ?
+                    screen.colorDepth : screen.pixelDepth)) + ';u' + escape(document.URL) +
+                ';h' + escape(document.title.substring(0, 150)) + ';' + Math.random() +
+                '" alt="" title="LiveInternet: показано число просмотров за 24' +
+                ' часа, посетителей за 24 часа и за сегодня" ' +
+                'border="0" width="88" height="31"><\/a>')
+        </script><!--/LiveInternet-->
+        <a class="float-right mr-5" href="https://github.com/eddir/teach-app">Github</a>
+
     </div>
 </footer>
 @yield('scripts')
