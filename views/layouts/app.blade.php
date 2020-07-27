@@ -80,7 +80,16 @@
 
     </div>
 </footer>
+<div id="navigator" data-enabled="0">+</div>
+<div id="navigator_menu">
+    <a href="/posts/add.php">Новая статья</a>
+    <a href="/tests/add.php">Новое задание</a>
+    <a href="/posts">Прочесть статью</a>
+    <a href="/tests">Решить задание</a>
+</div>
+<div id="navigator_background"></div>
 @yield('scripts')
 <script src="/js/anim.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>
