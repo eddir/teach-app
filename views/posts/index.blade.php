@@ -15,7 +15,9 @@
                     @foreach($posts as $post)
                         <div>
                             <h2>{{ $post->title }}</h2>
-                            <a class="btn btn-primary" href="/posts/view.php?post_id={{ $post->id }}">Перейти</a>
+                            <div class="text-right">
+                                <a class="btn btn-primary" href="/posts/view.php?post_id={{ $post->id }}">Перейти</a>
+                            </div>
                         </div><hr>
                         @endforeach
                 </div>

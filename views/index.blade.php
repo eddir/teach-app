@@ -22,7 +22,7 @@
                         <div>
                             <h2>{{ $test->title }}</h2>
                             <p>{{ $test->description }}</p>
-                            <a class="btn btn-primary" href="/tests/run.php?test_id={{ $test->id }}">Решать</a>
+                            <div class="text-right"><a class="btn btn-primary" href="/tests/run.php?test_id={{ $test->id }}">Решать</a></div>
                         </div><hr>
                     @endforeach
                 </div>

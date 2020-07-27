@@ -1,5 +1,4 @@
 $("#navigator").on("click", function (event) {
-    console.log($(event.target).attr("data-enabled"));
     if ($(event.target).attr("data-enabled") === "0") {
         $(event.target).attr("data-enabled", 1);
         $('#navigator_menu').show();

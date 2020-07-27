@@ -11,8 +11,10 @@
                         <div>
                             <h2>{{ $test->title }}</h2>
                             <p>{{ $test->description }}</p>
-                            <a class="btn btn-primary" href="/tests/run.php?test_id={{ $test->id }}">Решать</a>
-                            <a class="btn btn-danger" href="#" onclick="deleteTest({{ $test->id }})">Удалить</a>
+                            <div class="text-right">
+                                <a class="btn btn-primary" href="/tests/run.php?test_id={{ $test->id }}">Решать</a>
+                                <a class="btn btn-danger" href="#" onclick="deleteTest({{ $test->id }})">Удалить</a>
+                            </div>
                         </div>
                         <hr>
                     @endforeach

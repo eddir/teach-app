@@ -10,8 +10,10 @@
                     @foreach($posts as $post)
                         <div>
                             <h2>{{ $post->title }}</h2>
-                            <a class="btn btn-primary" href="/posts/view.php?post_id={{ $post->id }}">Перейти</a>
-                            <a class="btn btn-danger" href="#" onclick="deletePost({{ $post->id }})">Удалить</a>
+                            <div class="text-right">
+                                <a class="btn btn-primary" href="/posts/view.php?post_id={{ $post->id }}">Перейти</a>
+                                <a class="btn btn-danger" href="#" onclick="deletePost({{ $post->id }})">Удалить</a>
+                            </div>
                         </div>
                         <hr>
                     @endforeach
